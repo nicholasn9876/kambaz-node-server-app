@@ -10,7 +10,7 @@ export default function EnrollmentsDao(db) {
   }
   function unenrollUserFromCourse(userId, courseId) {
     const { enrollments } = db;
-    enrollments = enrollments.filter((enrollment) => !(enrolllment._id === userId && enrollment.courseId === courseId));
+    db.enrollments = enrollments.filter((enrollment) => !(enrollment.user === userId && enrollment.course === courseId));
   }
   return { enrollUserInCourse, unenrollUserFromCourse, getEnrollmentsForUser };
 }
